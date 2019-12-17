@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-# manage to coupon webpage
+# manage to coupon web Page
 >3학년 겨울방학에 진행하는 개인 프로젝트<br>
 
 ## project purpose
@@ -16,7 +16,7 @@
 - Spring Boot
 
 ### Database (Model)
-- MySQL
+- MariaDB
 - Lombok plugin
 - JPA
 
@@ -39,8 +39,9 @@
 |**TEST**|---------------------|
 |junit||
 |**Database**|---------------------|
-|JPA|1.0.0.Final|
-|MariaDB|2.5.2|
+|JPA|2.2.2.RELEASE|
+|Lombok|1.18.10|
+|Mariadb.jdbc|2.5.2|
 
 <br>[의존성 참고](https://mvnrepository.com/)
 ## API Specification
@@ -53,7 +54,7 @@
 - [x] Database 테이블 설계 (2019-12-17)
 - [ ] 데이터 흐름 설계 - API 명세서 작성
 - [ ] REST API JSON 파일로 파싱하는 방법 공부
-=======
+
 # manage to coupon webpage
 >3학년 겨울방학에 진행하는 개인 프로젝트<br>
 
@@ -104,5 +105,4 @@
 - [ ] Database 테이블 설계
 - [ ] 데이터 흐름 설계
 - [ ] REST API JSON 파일로 파싱하는 방법 공부
->>>>>>> 24cdef27b4a06be53353471820f0d125f776138e
 - [ ] 웹 어플리케이션 확장 기능 생각해보기 ex) 로그인 기능

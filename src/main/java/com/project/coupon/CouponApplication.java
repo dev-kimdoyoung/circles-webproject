@@ -8,6 +8,7 @@ public class CouponApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(CouponApplication.class, args);
+        System.out.println("웹 애플리케이션 구동!");
     }
 
 }
