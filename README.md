@@ -19,12 +19,15 @@
 - Lombok plugin
 - JPA
 
+####테이블 설계
+![DB테이블](./image/databasetable.jpg)
+
 ### Front-End (View)
 - html
 - CSS (bootstrap)
 - javascript
 
-##### manageMember.html
+#### manageMember.html
 ![회원관리](./image/managemember.jpg)
 
 ## Dependency
@@ -44,8 +47,9 @@
 
 
 ## todolist
-- [x] mamagemember.html bootstrap, css 이용하여 디자인
-- [ ] Database 테이블 설계
-- [ ] 데이터 흐름 설계
+- [x] project 개발 환경 셋팅 (2019-12-16)
+- [x] mamagemember.html bootstrap, css 이용하여 디자인 (2019-12-17)
+- [x] Database 테이블 설계 (2019-12-17)
+- [ ] 데이터 흐름 설계 - API 명세서 작성
 - [ ] REST API JSON 파일로 파싱하는 방법 공부
 - [ ] 웹 어플리케이션 확장 기능 생각해보기 ex) 로그인 기능
