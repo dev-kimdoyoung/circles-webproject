@@ -25,7 +25,7 @@
 - javascript
 
 ##### manageMember.html
-![회원관리](./image/managemember.png)
+![회원관리](./image/managemember.jpg)
 
 ## Dependency
 |dependency|Version|
