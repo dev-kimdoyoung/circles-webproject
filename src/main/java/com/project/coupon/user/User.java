@@ -1,8 +1,6 @@
 package com.project.coupon.user;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -13,6 +11,8 @@ import java.time.LocalDate;
 @Data
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class User {
 
     @Id
@@ -47,18 +47,6 @@ public class User {
 
     @Column(name = "is_regular_member")
     private Boolean isRegularMember;
-
-    public User(String student_id, String username, String major, Integer degree, String phoneNumber, String address, LocalDate created_Date, Boolean isPaid, Boolean isRegularMember) {
-        this.student_id = student_id;
-        this.username = username;
-        this.major = major;
-        this.degree = degree;
-        this.phoneNumber = phoneNumber;
-        this.address = address;
-        this.created_Date = created_Date;
-        this.isPaid = isPaid;
-        this.isRegularMember = isRegularMember;
-    }
 
     public User(String student_id, String username, String major, Integer degree, String phoneNumber, String address, LocalDate created_Date) {
         this.student_id = student_id;

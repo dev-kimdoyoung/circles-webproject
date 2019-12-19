@@ -23,7 +23,7 @@
 ![DB테이블](./image/databasetable.jpg)
 
 ### Front-End (View)
-- html
+- jsp
 - CSS (bootstrap)
 - javascript
 
@@ -33,15 +33,16 @@
 ## Dependency
 |dependency|Version|
 |:------:|:---:|
-|**Server**|---------------------|
+|**Server**||
 |SpringBoot|2.2.2 RELEASE|
-|**TEST**|---------------------|
-|junit||
-|**Database**|---------------------|
+|**TEST**||
+|junit|-|
+|**Database**||
 |JPA|2.2.2.RELEASE|
 |Lombok|1.18.10|
 |Mariadb.jdbc|2.5.2|
-
+|**front-end**||
+|JSTL|1.2|
 <br>[의존성 참고](https://mvnrepository.com/)
 
 ## API Specification
@@ -52,5 +53,7 @@ JSON 파일로 REST API 명세서 작성 예정
 - [x] project 개발 환경 셋팅 (2019-12-16)
 - [x] mamagemember.html bootstrap, css 이용하여 디자인 (2019-12-17)
 - [x] Database 테이블 설계 (2019-12-17)
+- [X] user CRUD 작업 (2019-12-19)
+- [ ] 게시글 10개 단위로 보여주기
 - [ ] REST API JSON 파일로 파싱하는 방법 공부
 - [ ] REST API 명세서 작성
