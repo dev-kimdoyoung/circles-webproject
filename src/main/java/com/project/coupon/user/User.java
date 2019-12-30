@@ -8,12 +8,11 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "users")
-@Data
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class User extends BaseTimeEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,23 +37,19 @@ public class User {
     @Column(name = "address")
     private String address;
 
-    @Column(name = "created_date")
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate created_Date;
-
     @Column(name = "is_paid")
     private Boolean isPaid;
 
     @Column(name = "is_regular_member")
     private Boolean isRegularMember;
 
-    public User(String student_id, String username, String major, Integer degree, String phoneNumber, String address, LocalDate created_Date) {
+    @Builder
+    public User(String student_id, String username, String major, Integer degree, String phoneNumber, String address) {
         this.student_id = student_id;
         this.username = username;
         this.major = major;
         this.degree = degree;
         this.phoneNumber = phoneNumber;
         this.address = address;
-        this.created_Date = created_Date;
     }
 }

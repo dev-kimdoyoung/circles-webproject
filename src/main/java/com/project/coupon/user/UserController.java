@@ -2,19 +2,13 @@ package com.project.coupon.user;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
-import javax.jws.soap.SOAPBinding;
-import javax.xml.ws.RequestWrapper;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-@Controller
+@RestController
 @Slf4j
 public class UserController {
 
@@ -22,16 +16,19 @@ public class UserController {
     UserRepository userRepository;
 
     @GetMapping("/index")
+    @ResponseBody
     public String getIndexPage() {
         return "index";
     }
 
     @GetMapping("/")
+    @ResponseBody
     public String getDefaultPage() {
         return "manage";
     }
 
     @GetMapping("/manage")
+    @ResponseBody
     public ModelAndView getManagePage(ModelAndView modelAndView) {
         List<User> list = userRepository.findAll();
         modelAndView.setViewName("/manage");
@@ -44,6 +41,7 @@ public class UserController {
     }
 
     @PostMapping("/delete")
+    @ResponseBody
     public RedirectView deleteMember(@RequestParam(value = "checkBox[]") List<String> userList) {
         int user_id = 0;
         int result = -1;
@@ -57,17 +55,25 @@ public class UserController {
         return new RedirectView("/manage");
     }
 
-    @RequestMapping(value = "/add", method = RequestMethod.POST)
+//    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    @PostMapping("/add")
+    @ResponseBody
     public RedirectView addMember(@RequestParam("username") String username,
-                                  @RequestParam("dept") String dept,
+                                  @RequestParam("major") String major,
                                   @RequestParam("degree") Integer degree,
                                   @RequestParam("student_id") String student_id,
                                   @RequestParam("address") String address,
                                   @RequestParam("phone") String phone) {
 
-        LocalDate localDate = LocalDate.now();
+        User user = User.builder()
+                .username(username)
+                .major(major)
+                .degree(degree)
+                .address(address)
+                .student_id(student_id)
+                .phoneNumber(phone)
+                .build();
 
-        User user = new User(student_id, username, dept, degree, phone, address, localDate);
         userRepository.save(user);
 
         return new RedirectView("/manage");
